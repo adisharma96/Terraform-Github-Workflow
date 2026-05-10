@@ -3,10 +3,10 @@ name: Terraform S3 pipeline
 on:
   push: 
     branches:
-      - master:
+      - master
     pull_request:
        branches:
-         - master:
+         - master
     workflow_dispatch:
 
 env:
