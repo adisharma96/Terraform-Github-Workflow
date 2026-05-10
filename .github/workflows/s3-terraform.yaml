@@ -3,10 +3,10 @@ name: Terraform S3 pipeline
 on:
   push: 
     branches:
-      - master
+      - main
     pull_request:
        branches:
-         - master
+         - main
     workflow_dispatch:
 
 env:
@@ -45,5 +45,5 @@ jobs:
         run: terraform plan -out=tfplan
 
       - name: Apply Terraform Plan only if the code is merged to master
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve tfplan
