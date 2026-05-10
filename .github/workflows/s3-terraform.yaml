@@ -44,6 +44,6 @@ jobs:
       - name: Generate Terraform Plan
         run: terraform plan -out=tfplan
 
-      - name: Apply Terraform Plan only if code is merged to master
+      - name: Apply Terraform Plan only if the code is merged to master
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: terraform apply -auto-approve tfplan
